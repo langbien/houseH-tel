@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!-- saved from url=(0133)https://s0.2mdn.net/sadbundle/1408130725965778558/index.html?e=69&leftOffset=0&topOffset=0&c=uFNXYft3Gc&t=1&renderingType=2&ev=01_247 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Razer Brand Campaign EN Amber 160x600</title>
+	
+    <meta name="ad.size" content="width=160,height=600">
+	<link rel="StyleSheet" href="./main.css" type="text/css">
+    <!-- Studio Enabler Required -->
+    <script src="./Enabler_01_247.js.télécharger"></script>
+</head>
+<body>
+
+    <div id="container">
+        <div id="border"></div>
+        <!-- Exit -->
+        <button id="exit"></button>
+        <div id="anim_container">
+
+            <img class="posAb" id="backup" src="./backup.jpg">
+
+            <div id="endframe" class="posAb full" style="transform: matrix(1, 0, 0, 1, 0, 0);">
+                <img class="posAb full" id="endframe-amber" src="./endframe-amber.jpg">
+                <img class="posAb full" id="talentname" src="./talentname-amber.png" style="visibility: inherit; opacity: 1;">
+                <img class="posAb full" id="copy" src="./copy.png" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                <img class="posAb full" id="cta" src="./cta.png" style="visibility: inherit; opacity: 1;">
+            </div>
+
+            <div id="talents" class="posAb full" style="transform: matrix(1, 0, 0, 1, 0, -600);">
+                <div class="talent posAb" id="talent1">
+                    <img class="posAb talent-img" id="sneaky" src="./sneaky.jpg" style="transform: matrix(1, 0, 0, 1, 0, 0);">
+                </div>
+                <div class="talent posAb" id="talent2">
+                    <img class="posAb talent-img" id="amber" src="./amber.jpg" style="transform: matrix(1, 0, 0, 1, 0, 0);">
+                </div>
+                <div class="talent posAb" id="talent4">
+                    <img class="posAb talent-img" id="scump" src="./scump.jpg" style="transform: matrix(1, 0, 0, 1, 0, 0);">
+                </div>
+                <div class="talent posAb" id="talent3">
+                    <img class="posAb talent-img" id="faker" src="./faker.jpg" style="transform: matrix(1, 0, 0, 1, 0, 0);">
+                </div>
+            </div>
+
+            <img class="posAb full" id="shadow" src="./shadow.png" style="transform: matrix(1, 0, 0, 1, 0, -600);">
+            <img class="posAb full" id="forgamers" src="./forgamers.png" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, -600);">
+
+            <div class="posAb full" id="base" style="visibility: hidden; opacity: 0;"></div>
+
+            <img class="posAb" id="transition" src="./transition.png" style="transform: matrix(1, 0, 0, 1, 0, -1400);">
+        
+        </div>
+    </div>
+    
+    <!-- Greensock Library -->
+    <script src="./TweenMax.min.js.télécharger"></script>
+    <script type="text/javascript">
+        // Global Variables
+        var tl = new TimelineLite();
+        var id = function(name){
+            return document.getElementById(name);
+        }
+        var feature_tl;
+        var featureAnimating;
+        var clickedthrough;
+
+        // Functionality
+        ad = {
+            init: function(){
+                var isInitialized = Enabler.isInitialized();
+                  isInitialized ? ad.start() : Enabler.addEventListener(studio.events.StudioEvent.INIT, ad.start);
+            },
+            start: function() {
+                id('exit').addEventListener('click', ad.bgExitHandler, false);
+
+                tl.set(id('base'), {autoAlpha:0}, "razer")
+                  .fromTo('.talent-img', 0.9, {scale:1.15}, {scale:1, ease: Power3.easeInOut}, "razer")
+                  .fromTo('#forgamers', 1.4, {y:10, autoAlpha:0}, {y:0, autoAlpha:1, ease: Power3.easeInOut}, "razer+=.15")
+                  // .fromTo(id('talent3'), .6, {scale:.5}, {scale:1,  ease:Power3.easeInOut}, "razer+=1.8")
+
+                  .fromTo(id('endframe'), 1, {y:600}, {y:0, ease: Power3.easeInOut}, "razer+=2.6")
+                  .fromTo(id('transition'), 2.8, {y:0}, {y:-1400, ease: Power3.easeInOut, onStart: function(){}}, "razer+=1.8")
+                  .fromTo([id('talents'), id('forgamers'), id('shadow')], 1, {y:0}, {y:-600, ease: Power3.easeIn}, "razer+=2.5")
+
+                  .fromTo(id('talentname'), 1, {autoAlpha:0}, {autoAlpha:1, ease: Power3.easeInOut}, "razer+=3.5")
+                  .fromTo(id('copy'), 1, {y:10, autoAlpha:0}, {y:0, autoAlpha:1, ease: Power3.easeInOut}, "razer+=4")
+                  .fromTo(id('cta'), 1, {autoAlpha:0}, {autoAlpha:1, ease: Power3.easeInOut}, "razer+=4.2")
+                
+            },
+            bgExitHandler: function() {
+                Enabler.exit('default');
+                tl.seek(tl.duration(), false);
+            }
+        }
+
+        // Ad Initialisation
+        window.addEventListener('load', ad.init);
+    </script>
+
+
+<iframe style="display: none;" src="./saved_resource(8).html"></iframe></body></html>
